@@ -6,8 +6,8 @@ import '@vaadin/vaadin-lumo-styles/style';
 import '@vaadin/vaadin-lumo-styles/typography';
 
 styleModule({
-  themeFor: 'vcf-element',
-  themeName: 'vcf-element-lumo',
+  themeFor: 'vcf-avatar-item',
+  themeName: 'vcf-avatar-item-lumo',
   include: 'lumo-color lumo-typography',
   styles: `
     :host {

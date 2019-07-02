@@ -2,7 +2,7 @@ import { html, PolymerElement } from '@polymer/polymer/polymer-element';
 import { ThemableMixin } from '@vaadin/vaadin-themable-mixin';
 import { ElementMixin } from '@vaadin/vaadin-element-mixin';
 
-class VcfElement extends ElementMixin(ThemableMixin(PolymerElement)) {
+class VcfAvatarItem extends ElementMixin(ThemableMixin(PolymerElement)) {
   static get template() {
     return html`
       <style>
@@ -14,7 +14,7 @@ class VcfElement extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get is() {
-    return 'vcf-element';
+    return 'vcf-avatar-item';
   }
 
   static get version() {
@@ -32,4 +32,4 @@ class VcfElement extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 }
 
-customElements.define(VcfElement.is, VcfElement);
+customElements.define(VcfAvatarItem.is, VcfAvatarItem);

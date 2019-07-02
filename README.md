@@ -1,28 +1,26 @@
-# &lt;vcf-element&gt;
-
-**Note that this is a starter boilerplate for creating Polymer 3 based components.**
+# &lt;vcf-avatar-item&gt;
 
 ## Installation
 
-Install `vcf-element`:
+Install `vcf-avatar-item`:
 
 ```sh
-npm i @vaadin/vcf-element --save
+npm i @vaadin/vcf-avatar-item --save
 ```
 
 Once installed, import it in your application:
 
 ```js
-import '@vaadin/vcf-element/vcf-element.js';
+import '@vaadin/vcf-avatar-item/vcf-avatar-item.js';
 ```
 
 ## Running demo
 
-1. Fork the `vcf-element` repository and clone it locally.
+1. Fork the `vcf-avatar-item` repository and clone it locally.
 
 1. Make sure you have [npm](https://www.npmjs.com/) installed.
 
-1. When in the `vcf-element` directory, run `npm install` to install dependencies.
+1. When in the `vcf-avatar-item` directory, run `npm install` to install dependencies.
 
 1. Run `npm start` to open the demo.
 
