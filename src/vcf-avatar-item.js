@@ -22,9 +22,7 @@ class VcfAvatarItem extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get properties() {
-    return {
-      
-    };
+    return {};
   }
 
   connectedCallback() {
@@ -33,3 +31,12 @@ class VcfAvatarItem extends ElementMixin(ThemableMixin(PolymerElement)) {
 }
 
 customElements.define(VcfAvatarItem.is, VcfAvatarItem);
+
+/**
+ * @namespace Vaadin
+ */
+window.Vaadin.VcfAvatarItem = VcfAvatarItem;
+
+if (window.Vaadin.runIfDevelopmentMode) {
+  window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', VcfAvatarItem);
+}
