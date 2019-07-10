@@ -5,13 +5,13 @@
 Install `vcf-avatar-item`:
 
 ```sh
-npm i @vaadin/vcf-avatar-item --save
+npm i @vaadin-component-factory/vcf-avatar-item --save
 ```
 
 Once installed, import it in your application:
 
 ```js
-import '@vaadin/vcf-avatar-item/vcf-avatar-item.js';
+import '@vaadin-component-factory/vcf-avatar-item/vcf-avatar-item.js';
 ```
 
 ## Running demo

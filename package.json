@@ -1,13 +1,13 @@
 {
-  "name": "vcf-avatar-item",
-  "version": "0.1.0",
+  "name": "@vaadin-component-factory/vcf-avatar-item",
+  "version": "0.1.1",
   "description": "Vaadin Component Factory Avatar Item",
   "main": "theme/lumo/vcf-avatar-item.js",
   "author": "Vaadin Ltd",
   "license": "https://raw.githubusercontent.com/vaadin/vaadin-incubator-element/master/LICENSE",
   "repository": {
     "type": "git",
-    "url": "vaadin-component-factory/vcf-avatar-item"
+    "url": "git+https://github.com/vaadin-component-factory/vcf-avatar-item.git"
   },
   "keywords": [
     "Vaadin",
@@ -56,5 +56,12 @@
     "polymer-cli": "^1.9.10",
     "prettier": "^1.17.1",
     "wct-mocha": "^1.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/vaadin-component-factory/vcf-avatar-item/issues"
+  },
+  "homepage": "https://github.com/vaadin-component-factory/vcf-avatar-item#readme",
+  "directories": {
+    "test": "test"
   }
 }
