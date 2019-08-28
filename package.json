@@ -1,6 +1,6 @@
 {
   "name": "@vaadin-component-factory/vcf-avatar-item",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Vaadin Component Factory Avatar Item",
   "main": "theme/lumo/vcf-avatar-item.js",
   "author": "Vaadin Ltd",
