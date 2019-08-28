@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
     <title>vcf-avatar-item demo</title>
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
     <script type="module">
@@ -18,12 +18,15 @@
     <div class="vertical-section-container">
       <demo-snippet>
         <template>
+          <!--
+            Note that providing "abbr" will override "name" attribute
+            and providing "image" will override both "name" and "abbr" attributes.
+          -->
           <vcf-avatar-item></vcf-avatar-item>
           <vcf-avatar-item name="John Doe"></vcf-avatar-item>
-          <vcf-avatar-item name="John Doe" abbr="ST"></vcf-avatar-item>
-          <vcf-avatar-item>
-            <img src="https://randomuser.me/api/portraits/women/5.jpg">
-          </vcf-avatar-item>
+          <vcf-avatar-item abbr="ST"></vcf-avatar-item>
+          <!-- If provided, the "name" attribute will be used as "alt" attribute of the image -->
+          <vcf-avatar-item image="https://randomuser.me/api/portraits/women/5.jpg" name="Jane Doe"></vcf-avatar-item>
         </template>
       </demo-snippet>
     </div>

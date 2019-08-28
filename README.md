@@ -24,25 +24,27 @@ And use it:
 
 By default, an avatar icon is shown on the avatar component. There are three ways to change what is shown on the avatar.
 
- 1. Provide a `name` attribute. An abbreviation will be created based on the provided name and will be shown instead of the avatar icon. E.g. Abbreviation for "John Doe" will be "JD".
+1.  Provide a `name` attribute. An abbreviation will be created based on the provided name and will be shown instead of the avatar icon. E.g. Abbreviation for "John Doe" will be "JD".
 
 ```html
 <vcf-avatar-item name="John Doe"></vcf-avatar-item>
 ```
 
- 2. Provide an `abbr` attribute. The provided abbreviation will be shown instead of the avatar icon.
+2.  Provide an `abbr` attribute. The provided abbreviation will be shown instead of the avatar icon.
 
 ```html
 <vcf-avatar-item abbr="ST"></vcf-avatar-item>
 ```
 
- 3. Provide an image to be shown instead of the avatar icon.
+*Providing `abbr` will override `name` attribute.*
+
+3.  Provide an `image` attribute. The provided image will be shown instead of the avatar icon. If provided, the `name` attribute will be used as `alt` attribute of the image.
 
 ```html
-<vcf-avatar-item>
-  <img src="https://randomuser.me/api/portraits/women/5.jpg">
-</vcf-avatar-item>
+<vcf-avatar-item image="https://randomuser.me/api/portraits/women/5.jpg" name="Jane Doe"></vcf-avatar-item>
 ```
+
+*Providing `image` will override both `name` and `abbr` attributes.*
 
 ## Running demo
 
@@ -56,7 +58,7 @@ By default, an avatar icon is shown on the avatar component. There are three way
 
 ## Contributing
 
-  To contribute to the component, please read [the guideline](https://github.com/vaadin/vaadin-core/blob/master/CONTRIBUTING.md) first.
+To contribute to the component, please read [the guideline](https://github.com/vaadin/vaadin-core/blob/master/CONTRIBUTING.md) first.
 
 ## License
 
