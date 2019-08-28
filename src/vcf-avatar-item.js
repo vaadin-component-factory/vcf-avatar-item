@@ -46,22 +46,21 @@ class VcfAvatarItem extends PolymerElement {
           padding: 20%;
         }
 
-        :host([name]) .icon {
-          display: none;
-        }
-
-        :host(:not([name])) .abbr {
-          display: none;
-        }
-
-        :host([image]) .abbr,
+        :host([name]) .icon,
+        :host([abbr]) .icon,
         :host([image]) .icon {
           display: none;
         }
+
+        :host([image]) .abbr {
+          display: none;
+        }
       </style>
-      <svg viewBox="-50 -50 100 100" preserveAspectRatio="xMidYMid meet" class="abbr">
-        <text dy="0.3em" text-anchor="middle"></text>
-      </svg>
+      <template is="dom-if" if="[[abbr]]">
+        <svg viewBox="-50 -50 100 100" preserveAspectRatio="xMidYMid meet" class="abbr">
+          <text dy="0.3em" text-anchor="middle">[[abbr]]</text>
+        </svg>
+      </template>
       <svg viewBox="0 0 32 32" class="icon">
         <path
           d="M26.6666 28V25.3333C26.6666 23.9188 26.1047 22.5623 25.1045 21.5621C24.1044 20.5619 22.7478 20 21.3333 20H10.6666C9.25216 20 7.8956 20.5619 6.89541 21.5621C5.89522 22.5623 5.33331 23.9188 5.33331 25.3333V28"
@@ -87,7 +86,7 @@ class VcfAvatarItem extends PolymerElement {
   }
 
   static get version() {
-    return '0.2.0';
+    return '0.2.1';
   }
 
   static get properties() {
@@ -97,28 +96,18 @@ class VcfAvatarItem extends PolymerElement {
         observer: 'nameChanged',
         reflectToAttribute: true
       },
-      abbr: {
-        type: String,
-        observer: 'nameChanged'
-      },
+      abbr: String,
       image: String
     };
   }
 
   nameChanged() {
-    if (this.abbr || this.name) {
-      this.shadowRoot.querySelector('svg text').textContent = this._getAbbr(this.name);
-    }
-
     if (this.name) {
+      this.abbr = this.abbr || this.name.match(/\b\S/g).join('');
       this.setAttribute('title', this.name);
     } else {
       this.removeAttribute('title');
     }
-  }
-
-  _getAbbr(name) {
-    return this.abbr || name.match(/\b\S/g).join('');
   }
 }
 
