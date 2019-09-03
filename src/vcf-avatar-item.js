@@ -85,10 +85,6 @@ class VcfAvatarItem extends PolymerElement {
     return 'vcf-avatar-item';
   }
 
-  static get version() {
-    return '0.2.15';
-  }
-
   static get properties() {
     return {
       name: {
