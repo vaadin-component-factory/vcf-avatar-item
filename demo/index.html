@@ -7,24 +7,54 @@
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
     <script type="module" src="demo.js"></script>
     <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles"></style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+        .centered {
+          max-width: 1000px;
+        }
+        main {
+          opacity: 1;
+          transition: opacity 1s;
+        }
+        main.hidden {
+          opacity: 0;
+        }
+      </style>
     </custom-style>
+    <script>
+      window.addEventListener('WebComponentsReady', () => document.querySelector('main').classList.remove('hidden'));
+    </script>
   </head>
   <body>
-    <div class="vertical-section-container">
+    <main class="vertical-section-container centered hidden">
+      <h3>Basic usage</h3>
+      <demo-snippet>
+        <template>
+          <vcf-avatar-item></vcf-avatar-item>
+        </template>
+      </demo-snippet>
+      <h3>Providing name</h3>
+      <demo-snippet>
+        <template>
+          <vcf-avatar-item name="John Doe"></vcf-avatar-item>
+        </template>
+      </demo-snippet>
+      <h3>Providing abbreviation</h3>
+      <demo-snippet>
+        <template>
+          <!-- Note that providing "abbr" will override "name" attribute -->
+          <vcf-avatar-item abbr="ST"></vcf-avatar-item>
+        </template>
+      </demo-snippet>
+      <h3>Providing image</h3>
       <demo-snippet>
         <template>
           <!--
-            Note that providing "abbr" will override "name" attribute
-            and providing "image" will override both "name" and "abbr" attributes.
+            Note that providing "image" will override both "name" and "abbr" attributes.
+            If provided, the "name" attribute will be used as "alt" attribute of the image.
           -->
-          <vcf-avatar-item></vcf-avatar-item>
-          <vcf-avatar-item name="John Doe"></vcf-avatar-item>
-          <vcf-avatar-item abbr="ST"></vcf-avatar-item>
-          <!-- If provided, the "name" attribute will be used as "alt" attribute of the image -->
           <vcf-avatar-item image="https://randomuser.me/api/portraits/women/5.jpg" name="Jane Doe"></vcf-avatar-item>
         </template>
       </demo-snippet>
-    </div>
+    </main>
   </body>
 </html>
