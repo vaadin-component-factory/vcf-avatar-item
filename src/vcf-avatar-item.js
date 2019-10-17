@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 import { html, PolymerElement } from '@polymer/polymer/polymer-element';
+import { ThemableMixin } from '@vaadin/vaadin-themable-mixin';
 
-class VcfAvatarItem extends PolymerElement {
+class VcfAvatarItem extends ThemableMixin(PolymerElement) {
   static get template() {
     return html`
       <style>
