@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import { html, PolymerElement } from '@polymer/polymer/polymer-element';
 import { ThemableMixin } from '@vaadin/vaadin-themable-mixin';
+import '@vaadin/vaadin-license-checker/vaadin-license-checker';
 
 class VcfAvatarItem extends ThemableMixin(PolymerElement) {
   static get template() {
@@ -82,6 +83,19 @@ class VcfAvatarItem extends ThemableMixin(PolymerElement) {
     `;
   }
 
+  /**
+   * @protected
+   */
+  static _finalizeClass() {
+    super._finalizeClass();
+
+    const devModeCallback = window.Vaadin.developmentModeCallback;
+    const licenseChecker = devModeCallback && devModeCallback['vaadin-license-checker'];
+    if (typeof licenseChecker === 'function') {
+      licenseChecker(VcfAvatarItem);
+    }
+  }
+
   static get is() {
     return 'vcf-avatar-item';
   }
@@ -115,7 +129,3 @@ customElements.define(VcfAvatarItem.is, VcfAvatarItem);
  */
 window.Vaadin = window.Vaadin || {};
 window.Vaadin.VcfAvatarItem = VcfAvatarItem;
-
-if (window.Vaadin.runIfDevelopmentMode) {
-  window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', VcfAvatarItem);
-}
