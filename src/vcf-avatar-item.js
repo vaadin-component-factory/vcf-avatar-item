@@ -114,7 +114,7 @@ class VcfAvatarItem extends ThemableMixin(PolymerElement) {
 
   nameChanged() {
     if (this.name) {
-      this.abbr = this.abbr || this.name.match(/\b\S/g).join('');
+      this.abbr = this.abbr || this.name.trim().split(/\s+/, 2).map(n => n[0]).join('').toUpperCase();
       this.setAttribute('title', this.name);
     } else {
       this.removeAttribute('title');
